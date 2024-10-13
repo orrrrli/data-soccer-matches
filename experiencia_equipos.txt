@@ -1,0 +1,35 @@
+Equipo, Puntaje de experiencia
+Almeria, 0.36
+Athletic Club, 1.00
+Atletico de Madrid, 1.00
+Barcelona, 1.00
+Deportivo de La Coruna, 0.43
+Espanyol, 0.86
+Getafe, 0.93
+Hercules, 0.07
+Levante, 0.79
+Malaga, 0.57
+Mallorca, 0.50
+Osasuna, 0.71
+Racing de Santander, 0.14
+Real Madrid, 1.00
+Real Sociedad, 1.00
+Sevilla, 1.00
+Sporting de Gijon, 0.29
+Valencia, 1.00
+Villarreal, 0.93
+Zaragoza, 0.21
+Betis, 0.86
+Granada, 0.71
+Rayo Vallecano, 0.64
+Celta de Vigo, 0.86
+Valladolid, 0.43
+Elche, 0.36
+Cordoba, 0.07
+Eibar, 0.50
+Las Palmas, 0.29
+Alaves, 0.50
+Leganes, 0.29
+Girona, 0.29
+Huesca, 0.14
+Cadiz, 0.29
