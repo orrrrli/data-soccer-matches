@@ -1,1 +1,0 @@
-Equipo,PL,90 Jugados,ACT,SCA90,PassLiveSCA,PassDeadSCA,TakeOnsSCA,ShotsSCA,FouledSCA,DefenseSCA,ACG,GCA90,PassLiveGCA,PassDeadGCA,TakeOnsGCA,ShotsGCA,FouledGCA,DefenseGCA,Temporada
