@@ -88,5 +88,5 @@ for anio in range(2013, 2024):
     estadisticas_totales.extend(estadisticas_temporada)
 
 # Guardamos todos los datos en un solo archivo
-guardar_en_txt(estadisticas_totales, "estadisticas_creacion_goles_tiros_2013_2024.txt")
-print("Datos de todas las temporadas guardados en estadisticas_creacion_goles_tiros_2013_2024.txt")
+guardar_en_txt(estadisticas_totales, "estadisticas_creacion_goles_tiros.txt")
+print("Datos de todas las temporadas guardados en estadisticas_creacion_goles_tiros.txt")
