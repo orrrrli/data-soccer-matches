@@ -51,7 +51,7 @@ def obtener_salarios_temporada(temporada):
     return sueldos_temporada
 
 # Temporadas desde 2013-2014 hasta 2023-2024
-temporadas = [f"{year}-{year+1}" for year in range(2013, 2024)]
+temporadas = [f"{year}-{year+1}" for year in range(2017, 2024)]
 
 # Lista para almacenar los datos de todas las temporadas
 dataset_sueldos = []
