@@ -88,5 +88,5 @@ for anio in range(2013, 2024):
     estadisticas_defensivas_totales.extend(estadisticas_temporada_defensiva)
 
 # Guardamos todos los datos en un solo archivo
-guardar_en_txt_defensiva(estadisticas_defensivas_totales, "estadisticas_defensivas_2013_2024.txt")
-print("Datos defensivos de todas las temporadas guardados en estadisticas_defensivas_2013_2024.txt")
+guardar_en_txt_defensiva(estadisticas_defensivas_totales, "estadisticas_defensivas.txt")
+print("Datos defensivos de todas las temporadas guardados en estadisticas_defensivas.txt")

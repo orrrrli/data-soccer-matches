@@ -27,9 +27,16 @@ def extraer_datos_temporada_pases(url, temporada):
 
     for fila in filas:
         estadisticas = {'Temporada': temporada}
+
+        # Buscamos el nombre del equipo en el <th> o, si no existe, en el primer <td>
+        equipo_celda = fila.find('th')
+        if equipo_celda:
+            estadisticas['team'] = equipo_celda.text.strip()
+        else:
+            estadisticas['team'] = fila.find('td').text.strip() if fila.find('td') else "N/A"
+
+        # Extraer el resto de los datos usando `data-stat`
         columnas = fila.find_all('td')
-        
-        # Asignamos cada dato de acuerdo con su `data-stat`
         for columna in columnas:
             data_stat = columna.get('data-stat')
             if data_stat in columnas_esperadas:
@@ -54,7 +61,6 @@ def guardar_en_txt_pases(datos, nombre_archivo):
                                 'Pases Fuera de Juego', 'Pases Bloqueados', 'Temporada']) + '\n')
 
         for estadistica in datos:
-            # Guardamos cada dato, tomando valores vacíos si faltan
             archivo.write(','.join([estadistica.get(col, '') for col in [
                 'team', 'players_used', 'minutes_90s', 'passes', 'passes_live', 'passes_dead', 
                 'passes_free_kicks', 'through_balls', 'passes_switches', 'crosses', 'throw_ins', 

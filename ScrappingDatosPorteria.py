@@ -97,5 +97,5 @@ for anio in range(2017, 2024):
     estadisticas_porteros_totales.extend(estadisticas_temporada_porteros)
 
 # Guardamos todos los datos en un solo archivo
-guardar_en_txt_porteros(estadisticas_porteros_totales, "estadisticas_porteros.txt")
-print("Datos avanzados de porteros de todas las temporadas guardados en estadisticas_porteros.txt")
+guardar_en_txt_porteros(estadisticas_porteros_totales, "estadisticas_porteria.txt")
+print("Datos avanzados de porteros de todas las temporadas guardados en estadisticas_porteria.txt")
