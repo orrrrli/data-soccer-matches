@@ -89,5 +89,5 @@ for anio in range(2017, 2024):
     estadisticas_pases_totales.extend(estadisticas_temporada_pases)
 
 # Guardamos todos los datos en un solo archivo
-guardar_en_txt_pases(estadisticas_pases_totales, "estadisticas_pases_2017_2024.txt")
-print("Datos de tipos de pases de todas las temporadas guardados en estadisticas_pases_2017_2024.txt")
+guardar_en_txt_pases(estadisticas_pases_totales, "estadisticas_tipos_pases_2017_2024.txt")
+print("Datos de tipos de pases de todas las temporadas guardados en estadisticas_tipos_pases_2017_2024.txt")
