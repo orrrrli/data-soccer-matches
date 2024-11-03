@@ -1,19 +1,21 @@
-1,FC Barcelona ,LaLiga,
-2,Real Madrid ,LaLiga,
-3,Atletico Madrid ,LaLiga,
-4,Athletic ,LaLiga,
-5,Villarreal CF ,LaLiga,
-6,RCD Mallorca ,LaLiga,
-7,CA Osasuna ,LaLiga,
-8,RC Celta ,LaLiga,
-9,Girona FC ,LaLiga,
-10,Alaves ,LaLiga,
-11,Real Sociedad ,LaLiga,
-12,CD Leganes ,LaLiga,
-13,Real Betis ,LaLiga,
-14,Rayo Vallecano ,LaLiga,
-15,Sevilla FC ,LaLiga,
-16,Getafe CF ,LaLiga,
-17,Real Valladolid ,LaLiga,
-18,UD Las Palmas ,LaLiga,
-19,Valencia CF ,LaLiga,
+Equipo,Posicion
+FC Barcelona,1
+Real Madrid,2
+Villarreal CF,3
+Atletico Madrid,4
+Athletic,5
+RCD Mallorca,6
+Real Betis,7
+CA Osasuna,8
+Girona FC,9
+Sevilla FC,10
+Rayo Vallecano,11
+Real Sociedad,12
+Alaves,13
+RC Celta,14
+RCD Espanyol,15
+Getafe CF,16
+UD Las Palmas,17
+CD Leganes,18
+Valencia CF,19
+Real Valladolid,20
