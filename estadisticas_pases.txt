@@ -1,4 +1,4 @@
-Equipo,Pases Completados,Distancia Progresiva de Pase,Asistencias Esperadas,Cruces al Área Penal,Pases Progresivos,Temporada
+Equipo,Pases Completados,Distancia Progresiva de Pase,Asistencias Esperadas,Centros al Area Penal,Pases Progresivos,Temporada
 Alavés,9696,81720,27.7,62,1045,2017-2018
 Athletic Club,13195,100454,33.7,104,1519,2017-2018
 Atlético Madrid,14484,94141,36.6,34,1460,2017-2018
