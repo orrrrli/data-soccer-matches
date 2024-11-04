@@ -1,93 +1,94 @@
-import requests
+from selenium import webdriver
 from bs4 import BeautifulSoup
+import time
 
-# Función para extraer datos de una temporada dada
-def extraer_datos_temporada(url, temporada):
-    # Realizamos la solicitud a la página
-    response = requests.get(url)
+# Función para extraer datos de la tabla de creación de goles y tiros de una temporada dada
+def extraer_datos_temporada_creacion(driver, url, temporada):
+    # Accedemos a la URL
+    driver.get(url)
     
-    # Verificar si la solicitud es exitosa
-    if response.status_code == 200:
-        print(f"Página {temporada} cargada correctamente.")
-    else:
-        print(f"Error al cargar la página {temporada}: {response.status_code}")
-        return []
-    
-    soup = BeautifulSoup(response.content, 'html.parser')
+    # Esperamos unos segundos para que la página se cargue completamente
+    time.sleep(5)
 
-    # Buscar la tabla correcta en la página
+    # Obtenemos el HTML de la página actual
+    soup = BeautifulSoup(driver.page_source, 'html.parser')
+
+    # Buscamos la tabla con el ID correspondiente
     tabla = soup.find('table', {'id': 'stats_squads_gca_for'})
-
-    # Verificamos si se encontró la tabla
-    if tabla:
-        print(f"Tabla encontrada para la temporada {temporada}, comenzando a extraer datos...")
-    else:
-        print(f"No se encontró la tabla con id 'stats_squads_gca_for' para la temporada {temporada}.")
-        print(soup.prettify()[:1000])  # Imprime los primeros 1000 caracteres del HTML para inspección
+    
+    if not tabla:
+        print(f"No se encontró la tabla de creación de goles para la temporada {temporada}")
         return []
 
-    # Extraemos las filas de la tabla
+    print(f"Tabla de creación de goles encontrada para la temporada {temporada}, comenzando a extraer datos...")
+
+    # Estructura de los datos esperados con 'data-stat'
+    columnas_esperadas = ['team', 'sca_per90', 'gca_per90', 'Temporada']
+
     filas = tabla.find('tbody').find_all('tr')  # type: ignore
     estadisticas_temporada = []
 
-    # Iteramos sobre las filas de la tabla
     for fila in filas:
-        columnas = fila.find_all('td')
-        equipo = fila.find('th').text.strip() if fila.find('th') else "Sin equipo"
+        estadisticas = {'Temporada': temporada}
 
-        # Imprimir equipo y número de columnas encontradas en la fila
-        print(f"Equipo: {equipo}, Columnas encontradas: {len(columnas)}")
-
-        # Verificamos que haya al menos 12 columnas para obtener SCA90 y GCA90
-        if len(columnas) >= 12:
-            sca90 = columnas[4].text.strip()
-            gca90 = columnas[11].text.strip()
-
-            # Imprimir los valores de SCA90 y GCA90
-            print(f"SCA90: {sca90}, GCA90: {gca90}")
-
-            estadisticas = {
-                'Equipo': equipo,
-                'SCA90': sca90,
-                'GCA90': gca90,
-                'Temporada': temporada  # Añadimos la temporada como campo adicional
-            }
-            estadisticas_temporada.append(estadisticas)
+        # Extraemos el nombre del equipo en el <th> o, si no existe, en el primer <td>
+        equipo_celda = fila.find('th')
+        if equipo_celda:
+            estadisticas['team'] = equipo_celda.text.strip()
         else:
-            print(f"Fila incompleta encontrada en temporada {temporada}: {len(columnas)} columnas, se omite.")
+            estadisticas['team'] = fila.find('td').text.strip() if fila.find('td') else "N/A"
 
-    # Devolvemos los datos extraídos
+        # Extraemos el resto de los datos usando `data-stat`
+        columnas = fila.find_all('td')
+        for columna in columnas:
+            data_stat = columna.get('data-stat')
+            if data_stat in columnas_esperadas:
+                estadisticas[data_stat] = columna.text.strip()
+
+        # Añadimos solo las filas con datos
+        if len(estadisticas) > 1:
+            estadisticas_temporada.append(estadisticas)
+
     return estadisticas_temporada
 
 # Función para guardar los datos en un archivo .txt
-def guardar_en_txt(datos, nombre_archivo):
+def guardar_en_txt_creacion(datos, nombre_archivo):
     with open(nombre_archivo, 'w', encoding='utf-8') as archivo:
         # Escribimos los encabezados
         archivo.write('Equipo,SCA90,GCA90,Temporada\n')
-        # Escribimos cada fila de estadísticas
+
         for estadistica in datos:
-            archivo.write(f"{estadistica['Equipo']},{estadistica['SCA90']},{estadistica['GCA90']},{estadistica['Temporada']}\n")
+            archivo.write(','.join([estadistica.get(col, '') for col in [
+                'team', 'sca_per90', 'gca_per90', 'Temporada'
+            ]]) + '\n')
 
-# URL base para las temporadas
-url_base = 'https://fbref.com/es/comps/12/{anio}-{anio_siguiente}/gca/Estadisticas-{anio}-{anio_siguiente}-La-Liga'
+# URL base para las temporadas de creación de goles y tiros
+url_base_creacion = 'https://fbref.com/es/comps/12/{anio}-{anio_siguiente}/gca/Estadisticas-{anio}-{anio_siguiente}-La-Liga'
 
-# Lista para almacenar todas las estadísticas
-estadisticas_totales = []
+# Configuración de Selenium
+driver = webdriver.Chrome()  # Asegúrate de tener el controlador de Chrome configurado
+driver.implicitly_wait(10)
 
-# Iteramos sobre los años de la temporada desde 2013-2014 hasta 2023-2024
-for anio in range(2013, 2024):
+# Lista para almacenar todas las estadísticas de creación de goles y tiros
+estadisticas_creacion_totales = []
+
+# Iteramos sobre los años de la temporada desde 2017-2018 hasta 2023-2024
+for anio in range(2017, 2024):
     anio_siguiente = anio + 1
     temporada = f"{anio}-{anio_siguiente}"
-    url_temporada = url_base.format(anio=anio, anio_siguiente=anio_siguiente)
+    url_temporada = url_base_creacion.format(anio=anio, anio_siguiente=anio_siguiente)
 
-    print(f"\nExtrayendo datos de la temporada: {temporada}")
+    print(f"Extrayendo datos de creación de goles de la temporada: {temporada}")
     
     # Extraemos los datos de la temporada actual
-    estadisticas_temporada = extraer_datos_temporada(url_temporada, temporada)
+    estadisticas_temporada_creacion = extraer_datos_temporada_creacion(driver, url_temporada, temporada)
     
     # Añadimos las estadísticas de esta temporada a la lista total
-    estadisticas_totales.extend(estadisticas_temporada)
+    estadisticas_creacion_totales.extend(estadisticas_temporada_creacion)
 
 # Guardamos todos los datos en un solo archivo
-guardar_en_txt(estadisticas_totales, "estadisticas_creacion_goles_tiros_reducido.txt")
-print("Datos de todas las temporadas guardados en estadisticas_creacion_goles_tiros_reducido.txt")
+guardar_en_txt_creacion(estadisticas_creacion_totales, "estadisticas_creacion_goles.txt")
+print("Datos de creación de goles de todas las temporadas guardados en estadisticas_creacion_goles.txt")
+
+# Cerramos el navegador
+driver.quit()
