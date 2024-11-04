@@ -7,48 +7,33 @@ import requests
 import re
 import unicodedata
 import Const
+import pandas as pd
+import json
 
-# En este fichero voy a obtener un historico de partidos de futbol de todas
-# las temporadas anteriores a la actual a partir de la web:
-# http://www.bdfutbol.com/
-
-# Guardo los partidos de futbol con un id
+# Diccionario para almacenar partidos con un ID único
 partidos = dict()
-
-# Guardo los equipos de futbol con su id y su nombre
+# Diccionario para almacenar equipos de fútbol con su ID y nombre normalizado
 equipos = dict()
-
-# Contador de Partidos
+# Contador de partidos
 contador = 0
-
-
-import unicodedata
-
-
-
-import unicodedata
 
 # Función para normalizar los nombres de los equipos y eliminar los acentos
 def normalize_text(text):
-    # Descompone el texto para separar los acentos de los caracteres base
     normalized = unicodedata.normalize('NFKD', text)
-    # Elimina los caracteres de acento
     return normalized.encode('ASCII', 'ignore').decode('utf-8')
 
 # Función para procesar los equipos y normalizarlos
 def find_equipos(str_resultados):
     match = re.findall(r'SE\[\d+\]=\"(\d+)\|(.*?)\";', str_resultados)
-    print(f"Equipos encontrados: {len(match)}")  # Verifica cuántos equipos se encuentran
+    print(f"Equipos encontrados: {len(match)}")
     for mat in match:
         id_equipo = mat[0]
         nombre_equipo = mat[1]
-        nombre_normalizado = normalize_text(nombre_equipo)  # Normaliza el nombre del equipo
+        nombre_normalizado = normalize_text(nombre_equipo)
         equipos[id_equipo] = nombre_normalizado
         print(f"Equipo agregado: {nombre_normalizado}")
 
-
-
-
+# Función para procesar los partidos y extraer solo la información relevante
 def find_partidos(str_partidos, temporada, division):
     global contador
 
@@ -57,33 +42,34 @@ def find_partidos(str_partidos, temporada, division):
     print(f"Partidos encontrados: {len(partidos_encontrados)}")
 
     for partido_json in partidos_encontrados:
-        partido = eval(partido_json)  # Convertimos el JSON en un diccionario
+        # Convertimos el texto a un diccionario usando json.loads si es JSON válido
+        partido = json.loads(partido_json.replace("'", '"'))  # Convierte comillas simples a dobles
 
-        fecha = partido['d']
-        equipo_local = equipos[partido['a1']]
-        equipo_visitante = equipos[partido['a2']]
-        goles_local = partido['g1']
-        goles_visitante = partido['g2']
-        jornada = partido.get('jornada', '1')  # Agrega la jornada si existe
+        # Extraer la información relevante para cada partido
+        equipo_local = equipos.get(partido.get('a1'))
+        equipo_visitante = equipos.get(partido.get('a2'))
+        goles_local = partido.get('g1')
+        goles_visitante = partido.get('g2')
 
+        # Incrementar el contador y almacenar los datos del partido en el formato especificado
         contador += 1
-        partidos[contador] = Partido(
-            contador, temporada, division, jornada, equipo_local, equipo_visitante, goles_local, goles_visitante, fecha
-        )
+        partidos[contador] = {
+            "idPartido": contador,
+            "EquipoLocal": equipo_local,
+            "EquipoVisitante": equipo_visitante,
+            "golesLocal": goles_local,
+            "golesVisitante": goles_visitante,
+            "Temporada": temporada
+        }
 
-
-
+# Función principal para obtener los datos de partidos de cada temporada
 def get_partidos():
-    # Genero las URLs y scrapeo los datos para cada temporada
     for temporada in Const.TEMPORADAS:
-        print(f"****  PROCESANDO TEMPORADA {temporada} ****")
+        print(f"**** PROCESANDO TEMPORADA {temporada} ****")
         
-        # Mantener el guion medio en la temporada
         url_primera = f"https://www.bdfutbol.com/en/t/t{temporada}.html"
-        
         print(f"Procesando la URL: {url_primera}")
 
-        # Realizo la petición a la URL
         req_primera = requests.get(url_primera)
         
         # Verificar si la solicitud fue exitosa
@@ -91,24 +77,30 @@ def get_partidos():
             print(f"Error al obtener datos para la temporada {temporada}: {req_primera.status_code}")
             continue
 
-        # Paso la request a un objeto BeautifulSoup
+        # Parsear la respuesta HTML
         soup_primera = BeautifulSoup(req_primera.text, "html.parser")
-
-        # Obtengo los datos de la temporada
         datos_primera = str(soup_primera)
 
-        # Procesar equipos
+        # Procesar equipos y partidos
         find_equipos(datos_primera)
-
-        # Procesar partidos
         find_partidos(datos_primera, temporada, 1)
 
     return partidos
 
+# Función para exportar los partidos a un archivo .txt separado por comas en el formato deseado
+def exportar_partidos_txt():
+    # Convertir el diccionario de partidos a un DataFrame
+    partidos_df = pd.DataFrame.from_dict(partidos, orient='index')
+    # Reordenar columnas según el formato especificado
+    partidos_df = partidos_df[["idPartido", "EquipoLocal", "EquipoVisitante", "golesLocal", "golesVisitante", "Temporada"]]
+    # Exportar a un archivo .txt con datos separados por comas
+    partidos_df.to_csv("DataSetPartidos.txt", index=False, sep=',', header=True)
+    print("Exportación a 'DataSetPartidos.txt' completada.")
 
-
-
-# Devuelvo el valor del contador
+# Devuelve el valor del contador
 def get_contador():
     return contador
 
+# Llamada para realizar el scraping y exportar los datos
+get_partidos()
+exportar_partidos_txt()
