@@ -22,7 +22,7 @@ Zaragoza, 0.21
 Betis, 0.86
 Granada, 0.71
 Rayo Vallecano, 0.64
-Celta de Vigo, 0.86
+Celta Vigo, 0.86
 Valladolid, 0.43
 Elche, 0.36
 Cordoba, 0.07
