@@ -24,15 +24,11 @@ def extraer_datos_temporada_pases(driver, url, temporada):
 
     # Estructura de los datos esperados con 'data-stat'
     columnas_esperadas = [
-        'team', 'players_used', 'minutes_90s', 'passes_completed', 'passes', 'passes_pct',
-        'passes_total_distance', 'passes_progressive_distance', 'passes_completed_short', 'passes_short',
-        'passes_pct_short', 'passes_completed_medium', 'passes_medium', 'passes_pct_medium',
-        'passes_completed_long', 'passes_long', 'passes_pct_long', 'assists', 'xg_assist', 'pass_xa',
-        'xg_assist_net', 'assisted_shots', 'passes_into_final_third', 'passes_into_penalty_area',
-        'crosses_into_penalty_area', 'progressive_passes'
+        'team', 'passes_completed', 'passes_progressive_distance', 'xg_assist', 'crosses_into_penalty_area',
+        'progressive_passes', 'Temporada'
     ]
 
-    filas = tabla.find('tbody').find_all('tr') # type: ignore
+    filas = tabla.find('tbody').find_all('tr')  # type: ignore
     estadisticas_temporada = []
 
     for fila in filas:
@@ -61,23 +57,13 @@ def extraer_datos_temporada_pases(driver, url, temporada):
 # Función para guardar los datos en un archivo .txt
 def guardar_en_txt_pases(datos, nombre_archivo):
     with open(nombre_archivo, 'w', encoding='utf-8') as archivo:
-        archivo.write(','.join([
-            'Equipo', 'PL', '90 Jugados', 'Pases Completados', 'Pases Intentados', '% de Pase Completo',
-            'Distancia Total de Pase', 'Distancia Progresiva', 'Pases Completados Cortos', 'Pases Cortos',
-            '% Pase Completo Cortos', 'Pases Completados Medios', 'Pases Medios', '% Pase Completo Medios',
-            'Pases Completados Largos', 'Pases Largos', '% Pase Completo Largos', 'Asistencias', 'xAG',
-            'xA', 'Asistencias - xAG', 'Pases Clave', 'Pases al Último Tercio', 'Pases al Área Penal',
-            'Cruces al Área Penal', 'Pases Progresivos', 'Temporada'
-        ]) + '\n')
+        # Escribimos los encabezados
+        archivo.write('Equipo,Pases Completados,Distancia Progresiva de Pase,Asistencias Esperadas,Cruces al Área Penal,Pases Progresivos,Temporada\n')
 
         for estadistica in datos:
             archivo.write(','.join([estadistica.get(col, '') for col in [
-                'team', 'players_used', 'minutes_90s', 'passes_completed', 'passes', 'passes_pct',
-                'passes_total_distance', 'passes_progressive_distance', 'passes_completed_short', 'passes_short',
-                'passes_pct_short', 'passes_completed_medium', 'passes_medium', 'passes_pct_medium',
-                'passes_completed_long', 'passes_long', 'passes_pct_long', 'assists', 'xg_assist', 'pass_xa',
-                'xg_assist_net', 'assisted_shots', 'passes_into_final_third', 'passes_into_penalty_area',
-                'crosses_into_penalty_area', 'progressive_passes', 'Temporada'
+                'team', 'passes_completed', 'passes_progressive_distance', 'xg_assist', 'crosses_into_penalty_area',
+                'progressive_passes', 'Temporada'
             ]]) + '\n')
 
 # URL base para las temporadas de pases
