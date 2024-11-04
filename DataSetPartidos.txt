@@ -379,386 +379,386 @@ idPartido,EquipoLocal,EquipoVisitante,golesLocal,golesVisitante,Temporada
 378,Barcelona,Real Sociedad,1,0,2017-2018
 379,Valencia,Deportivo de La Coruna,2,1,2017-2018
 380,Atletico de Madrid,Eibar,2,2,2017-2018
-381,Girona,Valladolid,0,0,2018-19
-382,Betis,Levante,0,3,2018-19
-383,Celta Vigo,Espanyol,1,1,2018-19
-384,Villarreal,Real Sociedad,1,2,2018-19
-385,Barcelona,Alaves,3,0,2018-19
-386,Eibar,Huesca,1,2,2018-19
-387,Rayo Vallecano,Sevilla,1,4,2018-19
-388,Real Madrid,Getafe,2,0,2018-19
-389,Valencia,Atletico de Madrid,1,1,2018-19
-390,Athletic Club,Leganes,2,1,2018-19
-391,Getafe,Eibar,2,0,2018-19
-392,Leganes,Real Sociedad,2,2,2018-19
-393,Alaves,Betis,0,0,2018-19
-394,Atletico de Madrid,Rayo Vallecano,1,0,2018-19
-395,Valladolid,Barcelona,0,1,2018-19
-396,Espanyol,Valencia,2,0,2018-19
-397,Sevilla,Villarreal,0,0,2018-19
-398,Girona,Real Madrid,1,4,2018-19
-399,Levante,Celta Vigo,1,2,2018-19
-400,Athletic Club,Huesca,2,2,2018-19
-401,Getafe,Valladolid,0,0,2018-19
-402,Eibar,Real Sociedad,2,1,2018-19
-403,Villarreal,Girona,0,1,2018-19
-404,Celta Vigo,Atletico de Madrid,2,0,2018-19
-405,Real Madrid,Leganes,4,1,2018-19
-406,Levante,Valencia,2,2,2018-19
-407,Alaves,Espanyol,2,1,2018-19
-408,Barcelona,Huesca,8,2,2018-19
-409,Betis,Sevilla,1,0,2018-19
-410,Rayo Vallecano,Athletic Club,1,1,2018-19
-411,Huesca,Rayo Vallecano,0,1,2018-19
-412,Atletico de Madrid,Eibar,1,1,2018-19
-413,Real Sociedad,Barcelona,1,2,2018-19
-414,Valencia,Betis,0,0,2018-19
-415,Athletic Club,Real Madrid,1,1,2018-19
-416,Leganes,Villarreal,0,1,2018-19
-417,Espanyol,Levante,1,0,2018-19
-418,Valladolid,Alaves,0,1,2018-19
-419,Sevilla,Getafe,0,2,2018-19
-420,Girona,Celta Vigo,3,2,2018-19
-421,Huesca,Real Sociedad,0,1,2018-19
-422,Celta Vigo,Valladolid,3,3,2018-19
-423,Eibar,Leganes,1,0,2018-19
-424,Rayo Vallecano,Alaves,1,5,2018-19
-425,Getafe,Atletico de Madrid,0,2,2018-19
-426,Real Madrid,Espanyol,1,0,2018-19
-427,Barcelona,Girona,2,2,2018-19
-428,Levante,Sevilla,2,6,2018-19
-429,Betis,Athletic Club,2,2,2018-19
-430,Villarreal,Valencia,0,0,2018-19
-431,Atletico de Madrid,Huesca,3,0,2018-19
-432,Espanyol,Eibar,1,0,2018-19
-433,Real Sociedad,Rayo Vallecano,2,2,2018-19
-434,Athletic Club,Villarreal,0,3,2018-19
-435,Leganes,Barcelona,2,1,2018-19
-436,Valencia,Celta Vigo,1,1,2018-19
-437,Sevilla,Real Madrid,3,0,2018-19
-438,Alaves,Getafe,1,1,2018-19
-439,Girona,Betis,0,1,2018-19
-440,Valladolid,Levante,2,1,2018-19
-441,Rayo Vallecano,Espanyol,2,2,2018-19
-442,Eibar,Sevilla,1,3,2018-19
-443,Real Sociedad,Valencia,0,1,2018-19
-444,Real Madrid,Atletico de Madrid,0,0,2018-19
-445,Barcelona,Athletic Club,1,1,2018-19
-446,Betis,Leganes,1,0,2018-19
-447,Levante,Alaves,2,1,2018-19
-448,Huesca,Girona,1,1,2018-19
-449,Villarreal,Valladolid,0,1,2018-19
-450,Celta Vigo,Getafe,1,1,2018-19
-451,Athletic Club,Real Sociedad,1,3,2018-19
-452,Alaves,Real Madrid,1,0,2018-19
-453,Getafe,Levante,0,1,2018-19
-454,Leganes,Rayo Vallecano,1,0,2018-19
-455,Girona,Eibar,2,3,2018-19
-456,Atletico de Madrid,Betis,1,0,2018-19
-457,Espanyol,Villarreal,3,1,2018-19
-458,Valencia,Barcelona,1,1,2018-19
-459,Sevilla,Celta Vigo,2,1,2018-19
-460,Valladolid,Huesca,1,0,2018-19
-461,Celta Vigo,Alaves,0,1,2018-19
-462,Barcelona,Sevilla,4,2,2018-19
-463,Villarreal,Atletico de Madrid,1,1,2018-19
-464,Valencia,Leganes,1,1,2018-19
-465,Real Madrid,Levante,1,2,2018-19
-466,Betis,Valladolid,0,1,2018-19
-467,Eibar,Athletic Club,1,1,2018-19
-468,Huesca,Espanyol,0,2,2018-19
-469,Rayo Vallecano,Getafe,1,2,2018-19
-470,Real Sociedad,Girona,0,0,2018-19
-471,Valladolid,Espanyol,1,1,2018-19
-472,Athletic Club,Valencia,0,0,2018-19
-473,Atletico de Madrid,Real Sociedad,2,0,2018-19
-474,Celta Vigo,Eibar,4,0,2018-19
-475,Girona,Rayo Vallecano,2,1,2018-19
-476,Levante,Leganes,2,0,2018-19
-477,Barcelona,Real Madrid,5,1,2018-19
-478,Alaves,Villarreal,2,1,2018-19
-479,Getafe,Betis,2,0,2018-19
-480,Sevilla,Huesca,2,1,2018-19
-481,Real Madrid,Valladolid,2,0,2018-19
-482,Leganes,Atletico de Madrid,1,1,2018-19
-483,Rayo Vallecano,Barcelona,2,3,2018-19
-484,Valencia,Girona,0,1,2018-19
-485,Betis,Celta Vigo,3,3,2018-19
-486,Real Sociedad,Sevilla,0,0,2018-19
-487,Eibar,Alaves,2,1,2018-19
-488,Huesca,Getafe,1,1,2018-19
-489,Villarreal,Levante,1,1,2018-19
-490,Espanyol,Athletic Club,1,0,2018-19
-491,Levante,Real Sociedad,1,3,2018-19
-492,Getafe,Valencia,0,1,2018-19
-493,Girona,Leganes,0,0,2018-19
-494,Atletico de Madrid,Athletic Club,3,2,2018-19
-495,Valladolid,Eibar,0,0,2018-19
-496,Alaves,Huesca,2,1,2018-19
-497,Barcelona,Betis,3,4,2018-19
-498,Celta Vigo,Real Madrid,2,4,2018-19
-499,Rayo Vallecano,Villarreal,2,2,2018-19
-500,Sevilla,Espanyol,2,1,2018-19
-501,Leganes,Alaves,1,0,2018-19
-502,Atletico de Madrid,Barcelona,1,1,2018-19
-503,Eibar,Real Madrid,3,0,2018-19
-504,Huesca,Levante,2,2,2018-19
-505,Valencia,Rayo Vallecano,3,0,2018-19
-506,Athletic Club,Getafe,1,1,2018-19
-507,Espanyol,Girona,1,3,2018-19
-508,Sevilla,Valladolid,1,0,2018-19
-509,Villarreal,Betis,2,1,2018-19
-510,Real Sociedad,Celta Vigo,2,1,2018-19
-511,Rayo Vallecano,Eibar,1,0,2018-19
-512,Celta Vigo,Huesca,2,0,2018-19
-513,Real Madrid,Valencia,2,0,2018-19
-514,Getafe,Espanyol,3,0,2018-19
-515,Valladolid,Leganes,2,4,2018-19
-516,Alaves,Sevilla,1,1,2018-19
-517,Barcelona,Villarreal,2,0,2018-19
-518,Betis,Real Sociedad,1,0,2018-19
-519,Girona,Atletico de Madrid,1,1,2018-19
-520,Levante,Athletic Club,3,0,2018-19
-521,Leganes,Getafe,1,1,2018-19
-522,Atletico de Madrid,Alaves,3,0,2018-19
-523,Espanyol,Barcelona,0,4,2018-19
-524,Villarreal,Celta Vigo,2,3,2018-19
-525,Valencia,Sevilla,1,1,2018-19
-526,Betis,Rayo Vallecano,2,0,2018-19
-527,Eibar,Levante,4,4,2018-19
-528,Huesca,Real Madrid,0,1,2018-19
-529,Real Sociedad,Valladolid,1,2,2018-19
-530,Athletic Club,Girona,1,0,2018-19
-531,Celta Vigo,Leganes,0,0,2018-19
-532,Eibar,Valencia,1,1,2018-19
-533,Getafe,Real Sociedad,1,0,2018-19
-534,Valladolid,Atletico de Madrid,2,3,2018-19
-535,Real Madrid,Rayo Vallecano,1,0,2018-19
-536,Huesca,Villarreal,2,2,2018-19
-537,Levante,Barcelona,0,5,2018-19
-538,Espanyol,Betis,1,3,2018-19
-539,Sevilla,Girona,2,0,2018-19
-540,Alaves,Athletic Club,0,0,2018-19
-541,Real Sociedad,Alaves,0,1,2018-19
-542,Girona,Getafe,1,1,2018-19
-543,Athletic Club,Valladolid,1,1,2018-19
-544,Atletico de Madrid,Espanyol,1,0,2018-19
-545,Barcelona,Celta Vigo,2,0,2018-19
-546,Betis,Eibar,1,1,2018-19
-547,Leganes,Sevilla,1,1,2018-19
-548,Valencia,Huesca,2,1,2018-19
-549,Rayo Vallecano,Levante,2,1,2018-19
-550,Villarreal,Real Madrid,2,2,2018-19
-551,Espanyol,Leganes,1,0,2018-19
-552,Levante,Girona,2,2,2018-19
-553,Alaves,Valencia,2,1,2018-19
-554,Huesca,Betis,2,1,2018-19
-555,Valladolid,Rayo Vallecano,0,1,2018-19
-556,Eibar,Villarreal,0,0,2018-19
-557,Real Madrid,Real Sociedad,0,2,2018-19
-558,Sevilla,Atletico de Madrid,1,1,2018-19
-559,Getafe,Barcelona,1,2,2018-19
-560,Celta Vigo,Athletic Club,1,2,2018-19
-561,Rayo Vallecano,Celta Vigo,4,2,2018-19
-562,Valencia,Valladolid,1,1,2018-19
-563,Girona,Alaves,1,1,2018-19
-564,Villarreal,Getafe,1,2,2018-19
-565,Leganes,Huesca,1,0,2018-19
-566,Athletic Club,Sevilla,2,0,2018-19
-567,Atletico de Madrid,Levante,1,0,2018-19
-568,Barcelona,Eibar,3,0,2018-19
-569,Betis,Real Madrid,1,2,2018-19
-570,Real Sociedad,Espanyol,3,2,2018-19
-571,Getafe,Alaves,4,0,2018-19
-572,Celta Vigo,Valencia,1,2,2018-19
-573,Real Madrid,Sevilla,2,0,2018-19
-574,Huesca,Atletico de Madrid,0,3,2018-19
-575,Barcelona,Leganes,3,1,2018-19
-576,Betis,Girona,3,2,2018-19
-577,Levante,Valladolid,2,0,2018-19
-578,Rayo Vallecano,Real Sociedad,2,2,2018-19
-579,Villarreal,Athletic Club,1,1,2018-19
-580,Eibar,Espanyol,3,0,2018-19
-581,Atletico de Madrid,Getafe,2,0,2018-19
-582,Valencia,Villarreal,3,0,2018-19
-583,Leganes,Eibar,2,2,2018-19
-584,Sevilla,Levante,5,0,2018-19
-585,Athletic Club,Betis,1,0,2018-19
-586,Espanyol,Real Madrid,2,4,2018-19
-587,Girona,Barcelona,0,2,2018-19
-588,Valladolid,Celta Vigo,2,1,2018-19
-589,Real Sociedad,Huesca,0,0,2018-19
-590,Alaves,Rayo Vallecano,0,1,2018-19
-591,Huesca,Valladolid,4,0,2018-19
-592,Barcelona,Valencia,2,2,2018-19
-593,Celta Vigo,Sevilla,1,0,2018-19
-594,Real Sociedad,Athletic Club,2,1,2018-19
-595,Levante,Getafe,0,0,2018-19
-596,Eibar,Girona,3,0,2018-19
-597,Real Madrid,Alaves,3,0,2018-19
-598,Betis,Atletico de Madrid,1,0,2018-19
-599,Villarreal,Espanyol,2,2,2018-19
-600,Rayo Vallecano,Leganes,1,2,2018-19
-601,Valladolid,Villarreal,0,0,2018-19
-602,Atletico de Madrid,Real Madrid,1,3,2018-19
-603,Espanyol,Rayo Vallecano,2,1,2018-19
-604,Girona,Huesca,0,2,2018-19
-605,Getafe,Celta Vigo,3,1,2018-19
-606,Athletic Club,Barcelona,0,0,2018-19
-607,Leganes,Betis,3,0,2018-19
-608,Sevilla,Eibar,2,2,2018-19
-609,Valencia,Real Sociedad,0,0,2018-19
-610,Alaves,Levante,2,0,2018-19
-611,Eibar,Getafe,2,2,2018-19
-612,Barcelona,Valladolid,1,0,2018-19
-613,Celta Vigo,Levante,1,4,2018-19
-614,Rayo Vallecano,Atletico de Madrid,0,1,2018-19
-615,Real Sociedad,Leganes,3,0,2018-19
-616,Betis,Alaves,1,1,2018-19
-617,Valencia,Espanyol,0,0,2018-19
-618,Real Madrid,Girona,1,2,2018-19
-619,Villarreal,Sevilla,3,0,2018-19
-620,Huesca,Athletic Club,0,1,2018-19
-621,Espanyol,Huesca,1,1,2018-19
-622,Alaves,Celta Vigo,0,0,2018-19
-623,Athletic Club,Eibar,1,0,2018-19
-624,Getafe,Rayo Vallecano,2,1,2018-19
-625,Sevilla,Barcelona,2,4,2018-19
-626,Atletico de Madrid,Villarreal,2,0,2018-19
-627,Leganes,Valencia,1,1,2018-19
-628,Levante,Real Madrid,1,2,2018-19
-629,Valladolid,Betis,0,2,2018-19
-630,Girona,Real Sociedad,0,0,2018-19
-631,Rayo Vallecano,Girona,0,2,2018-19
-632,Espanyol,Valladolid,3,1,2018-19
-633,Huesca,Sevilla,2,1,2018-19
-634,Real Madrid,Barcelona,0,1,2018-19
-635,Villarreal,Alaves,1,2,2018-19
-636,Betis,Getafe,1,2,2018-19
-637,Valencia,Athletic Club,2,0,2018-19
-638,Real Sociedad,Atletico de Madrid,0,2,2018-19
-639,Eibar,Celta Vigo,1,0,2018-19
-640,Leganes,Levante,1,0,2018-19
-641,Athletic Club,Espanyol,1,1,2018-19
-642,Alaves,Eibar,1,1,2018-19
-643,Atletico de Madrid,Leganes,1,0,2018-19
-644,Barcelona,Rayo Vallecano,3,1,2018-19
-645,Getafe,Huesca,2,1,2018-19
-646,Girona,Valencia,2,3,2018-19
-647,Levante,Villarreal,0,2,2018-19
-648,Celta Vigo,Betis,0,1,2018-19
-649,Valladolid,Real Madrid,1,4,2018-19
-650,Sevilla,Real Sociedad,5,2,2018-19
-651,Real Sociedad,Levante,1,1,2018-19
-652,Athletic Club,Atletico de Madrid,2,0,2018-19
-653,Huesca,Alaves,1,3,2018-19
-654,Real Madrid,Celta Vigo,2,0,2018-19
-655,Leganes,Girona,0,2,2018-19
-656,Eibar,Valladolid,1,2,2018-19
-657,Espanyol,Sevilla,0,1,2018-19
-658,Betis,Barcelona,1,4,2018-19
-659,Valencia,Getafe,0,0,2018-19
-660,Villarreal,Rayo Vallecano,3,1,2018-19
-661,Girona,Athletic Club,1,2,2018-19
-662,Alaves,Atletico de Madrid,0,4,2018-19
-663,Barcelona,Espanyol,2,0,2018-19
-664,Celta Vigo,Villarreal,3,2,2018-19
-665,Getafe,Leganes,0,2,2018-19
-666,Sevilla,Valencia,0,1,2018-19
-667,Rayo Vallecano,Betis,1,1,2018-19
-668,Levante,Eibar,2,2,2018-19
-669,Real Madrid,Huesca,3,2,2018-19
-670,Valladolid,Real Sociedad,1,1,2018-19
-671,Atletico de Madrid,Girona,2,0,2018-19
-672,Espanyol,Getafe,1,1,2018-19
-673,Villarreal,Barcelona,4,4,2018-19
-674,Athletic Club,Levante,3,2,2018-19
-675,Eibar,Rayo Vallecano,2,1,2018-19
-676,Huesca,Celta Vigo,3,3,2018-19
-677,Valencia,Real Madrid,2,1,2018-19
-678,Leganes,Valladolid,1,0,2018-19
-679,Sevilla,Alaves,2,0,2018-19
-680,Real Sociedad,Betis,2,1,2018-19
-681,Rayo Vallecano,Valencia,2,0,2018-19
-682,Barcelona,Atletico de Madrid,2,0,2018-19
-683,Real Madrid,Eibar,2,1,2018-19
-684,Girona,Espanyol,1,2,2018-19
-685,Alaves,Leganes,1,1,2018-19
-686,Betis,Villarreal,2,1,2018-19
-687,Celta Vigo,Real Sociedad,3,1,2018-19
-688,Getafe,Athletic Club,1,0,2018-19
-689,Levante,Huesca,2,2,2018-19
-690,Valladolid,Sevilla,0,2,2018-19
-691,Atletico de Madrid,Celta Vigo,2,0,2018-19
-692,Espanyol,Alaves,2,1,2018-19
-693,Huesca,Barcelona,0,0,2018-19
-694,Sevilla,Betis,3,2,2018-19
-695,Athletic Club,Rayo Vallecano,3,2,2018-19
-696,Girona,Villarreal,0,1,2018-19
-697,Real Sociedad,Eibar,1,1,2018-19
-698,Valladolid,Getafe,2,2,2018-19
-699,Valencia,Levante,3,1,2018-19
-700,Leganes,Real Madrid,1,1,2018-19
-701,Alaves,Valladolid,2,2,2018-19
-702,Barcelona,Real Sociedad,2,1,2018-19
-703,Celta Vigo,Girona,2,1,2018-19
-704,Eibar,Atletico de Madrid,0,1,2018-19
-705,Rayo Vallecano,Huesca,0,0,2018-19
-706,Betis,Valencia,1,2,2018-19
-707,Getafe,Sevilla,3,0,2018-19
-708,Real Madrid,Athletic Club,3,0,2018-19
-709,Levante,Espanyol,2,2,2018-19
-710,Villarreal,Leganes,2,1,2018-19
-711,Alaves,Barcelona,0,2,2018-19
-712,Huesca,Eibar,2,0,2018-19
-713,Valladolid,Girona,1,0,2018-19
-714,Atletico de Madrid,Valencia,3,2,2018-19
-715,Leganes,Athletic Club,0,1,2018-19
-716,Levante,Betis,4,0,2018-19
-717,Espanyol,Celta Vigo,1,1,2018-19
-718,Getafe,Real Madrid,0,0,2018-19
-719,Real Sociedad,Villarreal,0,1,2018-19
-720,Sevilla,Rayo Vallecano,5,0,2018-19
-721,Atletico de Madrid,Valladolid,1,0,2018-19
-722,Barcelona,Levante,1,0,2018-19
-723,Athletic Club,Alaves,1,1,2018-19
-724,Leganes,Celta Vigo,0,0,2018-19
-725,Girona,Sevilla,1,0,2018-19
-726,Rayo Vallecano,Real Madrid,1,0,2018-19
-727,Valencia,Eibar,0,1,2018-19
-728,Real Sociedad,Getafe,2,1,2018-19
-729,Villarreal,Huesca,1,1,2018-19
-730,Betis,Espanyol,1,1,2018-19
-731,Sevilla,Leganes,0,3,2018-19
-732,Alaves,Real Sociedad,0,1,2018-19
-733,Levante,Rayo Vallecano,4,1,2018-19
-734,Espanyol,Atletico de Madrid,3,0,2018-19
-735,Celta Vigo,Barcelona,2,0,2018-19
-736,Getafe,Girona,2,0,2018-19
-737,Huesca,Valencia,2,6,2018-19
-738,Real Madrid,Villarreal,3,2,2018-19
-739,Valladolid,Athletic Club,1,0,2018-19
-740,Eibar,Betis,1,0,2018-19
-741,Athletic Club,Celta Vigo,3,1,2018-19
-742,Atletico de Madrid,Sevilla,1,1,2018-19
-743,Barcelona,Getafe,2,0,2018-19
-744,Betis,Huesca,2,1,2018-19
-745,Girona,Levante,1,2,2018-19
-746,Rayo Vallecano,Valladolid,1,2,2018-19
-747,Valencia,Alaves,3,1,2018-19
-748,Villarreal,Eibar,1,0,2018-19
-749,Leganes,Espanyol,0,2,2018-19
-750,Real Sociedad,Real Madrid,3,1,2018-19
-751,Alaves,Girona,2,1,2018-19
-752,Celta Vigo,Rayo Vallecano,2,2,2018-19
-753,Espanyol,Real Sociedad,2,0,2018-19
-754,Getafe,Villarreal,2,2,2018-19
-755,Huesca,Leganes,2,1,2018-19
-756,Sevilla,Athletic Club,2,0,2018-19
-757,Levante,Atletico de Madrid,2,2,2018-19
-758,Valladolid,Valencia,0,2,2018-19
-759,Eibar,Barcelona,2,2,2018-19
-760,Real Madrid,Betis,0,2,2018-19
+381,Girona,Valladolid,0,0,2018-2019
+382,Betis,Levante,0,3,2018-2019
+383,Celta Vigo,Espanyol,1,1,2018-2019
+384,Villarreal,Real Sociedad,1,2,2018-2019
+385,Barcelona,Alaves,3,0,2018-2019
+386,Eibar,Huesca,1,2,2018-2019
+387,Rayo Vallecano,Sevilla,1,4,2018-2019
+388,Real Madrid,Getafe,2,0,2018-2019
+389,Valencia,Atletico de Madrid,1,1,2018-2019
+390,Athletic Club,Leganes,2,1,2018-2019
+391,Getafe,Eibar,2,0,2018-2019
+392,Leganes,Real Sociedad,2,2,2018-2019
+393,Alaves,Betis,0,0,2018-2019
+394,Atletico de Madrid,Rayo Vallecano,1,0,2018-2019
+395,Valladolid,Barcelona,0,1,2018-2019
+396,Espanyol,Valencia,2,0,2018-2019
+397,Sevilla,Villarreal,0,0,2018-2019
+398,Girona,Real Madrid,1,4,2018-2019
+399,Levante,Celta Vigo,1,2,2018-2019
+400,Athletic Club,Huesca,2,2,2018-2019
+401,Getafe,Valladolid,0,0,2018-2019
+402,Eibar,Real Sociedad,2,1,2018-2019
+403,Villarreal,Girona,0,1,2018-2019
+404,Celta Vigo,Atletico de Madrid,2,0,2018-2019
+405,Real Madrid,Leganes,4,1,2018-2019
+406,Levante,Valencia,2,2,2018-2019
+407,Alaves,Espanyol,2,1,2018-2019
+408,Barcelona,Huesca,8,2,2018-2019
+409,Betis,Sevilla,1,0,2018-2019
+410,Rayo Vallecano,Athletic Club,1,1,2018-2019
+411,Huesca,Rayo Vallecano,0,1,2018-2019
+412,Atletico de Madrid,Eibar,1,1,2018-2019
+413,Real Sociedad,Barcelona,1,2,2018-2019
+414,Valencia,Betis,0,0,2018-2019
+415,Athletic Club,Real Madrid,1,1,2018-2019
+416,Leganes,Villarreal,0,1,2018-2019
+417,Espanyol,Levante,1,0,2018-2019
+418,Valladolid,Alaves,0,1,2018-2019
+419,Sevilla,Getafe,0,2,2018-2019
+420,Girona,Celta Vigo,3,2,2018-2019
+421,Huesca,Real Sociedad,0,1,2018-2019
+422,Celta Vigo,Valladolid,3,3,2018-2019
+423,Eibar,Leganes,1,0,2018-2019
+424,Rayo Vallecano,Alaves,1,5,2018-2019
+425,Getafe,Atletico de Madrid,0,2,2018-2019
+426,Real Madrid,Espanyol,1,0,2018-2019
+427,Barcelona,Girona,2,2,2018-2019
+428,Levante,Sevilla,2,6,2018-2019
+429,Betis,Athletic Club,2,2,2018-2019
+430,Villarreal,Valencia,0,0,2018-2019
+431,Atletico de Madrid,Huesca,3,0,2018-2019
+432,Espanyol,Eibar,1,0,2018-2019
+433,Real Sociedad,Rayo Vallecano,2,2,2018-2019
+434,Athletic Club,Villarreal,0,3,2018-2019
+435,Leganes,Barcelona,2,1,2018-2019
+436,Valencia,Celta Vigo,1,1,2018-2019
+437,Sevilla,Real Madrid,3,0,2018-2019
+438,Alaves,Getafe,1,1,2018-2019
+439,Girona,Betis,0,1,2018-2019
+440,Valladolid,Levante,2,1,2018-2019
+441,Rayo Vallecano,Espanyol,2,2,2018-2019
+442,Eibar,Sevilla,1,3,2018-2019
+443,Real Sociedad,Valencia,0,1,2018-2019
+444,Real Madrid,Atletico de Madrid,0,0,2018-2019
+445,Barcelona,Athletic Club,1,1,2018-2019
+446,Betis,Leganes,1,0,2018-2019
+447,Levante,Alaves,2,1,2018-2019
+448,Huesca,Girona,1,1,2018-2019
+449,Villarreal,Valladolid,0,1,2018-2019
+450,Celta Vigo,Getafe,1,1,2018-2019
+451,Athletic Club,Real Sociedad,1,3,2018-2019
+452,Alaves,Real Madrid,1,0,2018-2019
+453,Getafe,Levante,0,1,2018-2019
+454,Leganes,Rayo Vallecano,1,0,2018-2019
+455,Girona,Eibar,2,3,2018-2019
+456,Atletico de Madrid,Betis,1,0,2018-2019
+457,Espanyol,Villarreal,3,1,2018-2019
+458,Valencia,Barcelona,1,1,2018-2019
+459,Sevilla,Celta Vigo,2,1,2018-2019
+460,Valladolid,Huesca,1,0,2018-2019
+461,Celta Vigo,Alaves,0,1,2018-2019
+462,Barcelona,Sevilla,4,2,2018-2019
+463,Villarreal,Atletico de Madrid,1,1,2018-2019
+464,Valencia,Leganes,1,1,2018-2019
+465,Real Madrid,Levante,1,2,2018-2019
+466,Betis,Valladolid,0,1,2018-2019
+467,Eibar,Athletic Club,1,1,2018-2019
+468,Huesca,Espanyol,0,2,2018-2019
+469,Rayo Vallecano,Getafe,1,2,2018-2019
+470,Real Sociedad,Girona,0,0,2018-2019
+471,Valladolid,Espanyol,1,1,2018-2019
+472,Athletic Club,Valencia,0,0,2018-2019
+473,Atletico de Madrid,Real Sociedad,2,0,2018-2019
+474,Celta Vigo,Eibar,4,0,2018-2019
+475,Girona,Rayo Vallecano,2,1,2018-2019
+476,Levante,Leganes,2,0,2018-2019
+477,Barcelona,Real Madrid,5,1,2018-2019
+478,Alaves,Villarreal,2,1,2018-2019
+479,Getafe,Betis,2,0,2018-2019
+480,Sevilla,Huesca,2,1,2018-2019
+481,Real Madrid,Valladolid,2,0,2018-2019
+482,Leganes,Atletico de Madrid,1,1,2018-2019
+483,Rayo Vallecano,Barcelona,2,3,2018-2019
+484,Valencia,Girona,0,1,2018-2019
+485,Betis,Celta Vigo,3,3,2018-2019
+486,Real Sociedad,Sevilla,0,0,2018-2019
+487,Eibar,Alaves,2,1,2018-2019
+488,Huesca,Getafe,1,1,2018-2019
+489,Villarreal,Levante,1,1,2018-2019
+490,Espanyol,Athletic Club,1,0,2018-2019
+491,Levante,Real Sociedad,1,3,2018-2019
+492,Getafe,Valencia,0,1,2018-2019
+493,Girona,Leganes,0,0,2018-2019
+494,Atletico de Madrid,Athletic Club,3,2,2018-2019
+495,Valladolid,Eibar,0,0,2018-2019
+496,Alaves,Huesca,2,1,2018-2019
+497,Barcelona,Betis,3,4,2018-2019
+498,Celta Vigo,Real Madrid,2,4,2018-2019
+499,Rayo Vallecano,Villarreal,2,2,2018-2019
+500,Sevilla,Espanyol,2,1,2018-2019
+501,Leganes,Alaves,1,0,2018-2019
+502,Atletico de Madrid,Barcelona,1,1,2018-2019
+503,Eibar,Real Madrid,3,0,2018-2019
+504,Huesca,Levante,2,2,2018-2019
+505,Valencia,Rayo Vallecano,3,0,2018-2019
+506,Athletic Club,Getafe,1,1,2018-2019
+507,Espanyol,Girona,1,3,2018-2019
+508,Sevilla,Valladolid,1,0,2018-2019
+509,Villarreal,Betis,2,1,2018-2019
+510,Real Sociedad,Celta Vigo,2,1,2018-2019
+511,Rayo Vallecano,Eibar,1,0,2018-2019
+512,Celta Vigo,Huesca,2,0,2018-2019
+513,Real Madrid,Valencia,2,0,2018-2019
+514,Getafe,Espanyol,3,0,2018-2019
+515,Valladolid,Leganes,2,4,2018-2019
+516,Alaves,Sevilla,1,1,2018-2019
+517,Barcelona,Villarreal,2,0,2018-2019
+518,Betis,Real Sociedad,1,0,2018-2019
+519,Girona,Atletico de Madrid,1,1,2018-2019
+520,Levante,Athletic Club,3,0,2018-2019
+521,Leganes,Getafe,1,1,2018-2019
+522,Atletico de Madrid,Alaves,3,0,2018-2019
+523,Espanyol,Barcelona,0,4,2018-2019
+524,Villarreal,Celta Vigo,2,3,2018-2019
+525,Valencia,Sevilla,1,1,2018-2019
+526,Betis,Rayo Vallecano,2,0,2018-2019
+527,Eibar,Levante,4,4,2018-2019
+528,Huesca,Real Madrid,0,1,2018-2019
+529,Real Sociedad,Valladolid,1,2,2018-2019
+530,Athletic Club,Girona,1,0,2018-2019
+531,Celta Vigo,Leganes,0,0,2018-2019
+532,Eibar,Valencia,1,1,2018-2019
+533,Getafe,Real Sociedad,1,0,2018-2019
+534,Valladolid,Atletico de Madrid,2,3,2018-2019
+535,Real Madrid,Rayo Vallecano,1,0,2018-2019
+536,Huesca,Villarreal,2,2,2018-2019
+537,Levante,Barcelona,0,5,2018-2019
+538,Espanyol,Betis,1,3,2018-2019
+539,Sevilla,Girona,2,0,2018-2019
+540,Alaves,Athletic Club,0,0,2018-2019
+541,Real Sociedad,Alaves,0,1,2018-2019
+542,Girona,Getafe,1,1,2018-2019
+543,Athletic Club,Valladolid,1,1,2018-2019
+544,Atletico de Madrid,Espanyol,1,0,2018-2019
+545,Barcelona,Celta Vigo,2,0,2018-2019
+546,Betis,Eibar,1,1,2018-2019
+547,Leganes,Sevilla,1,1,2018-2019
+548,Valencia,Huesca,2,1,2018-2019
+549,Rayo Vallecano,Levante,2,1,2018-2019
+550,Villarreal,Real Madrid,2,2,2018-2019
+551,Espanyol,Leganes,1,0,2018-2019
+552,Levante,Girona,2,2,2018-2019
+553,Alaves,Valencia,2,1,2018-2019
+554,Huesca,Betis,2,1,2018-2019
+555,Valladolid,Rayo Vallecano,0,1,2018-2019
+556,Eibar,Villarreal,0,0,2018-2019
+557,Real Madrid,Real Sociedad,0,2,2018-2019
+558,Sevilla,Atletico de Madrid,1,1,2018-2019
+559,Getafe,Barcelona,1,2,2018-2019
+560,Celta Vigo,Athletic Club,1,2,2018-2019
+561,Rayo Vallecano,Celta Vigo,4,2,2018-2019
+562,Valencia,Valladolid,1,1,2018-2019
+563,Girona,Alaves,1,1,2018-2019
+564,Villarreal,Getafe,1,2,2018-2019
+565,Leganes,Huesca,1,0,2018-2019
+566,Athletic Club,Sevilla,2,0,2018-2019
+567,Atletico de Madrid,Levante,1,0,2018-2019
+568,Barcelona,Eibar,3,0,2018-2019
+569,Betis,Real Madrid,1,2,2018-2019
+570,Real Sociedad,Espanyol,3,2,2018-2019
+571,Getafe,Alaves,4,0,2018-2019
+572,Celta Vigo,Valencia,1,2,2018-2019
+573,Real Madrid,Sevilla,2,0,2018-2019
+574,Huesca,Atletico de Madrid,0,3,2018-2019
+575,Barcelona,Leganes,3,1,2018-2019
+576,Betis,Girona,3,2,2018-2019
+577,Levante,Valladolid,2,0,2018-2019
+578,Rayo Vallecano,Real Sociedad,2,2,2018-2019
+579,Villarreal,Athletic Club,1,1,2018-2019
+580,Eibar,Espanyol,3,0,2018-2019
+581,Atletico de Madrid,Getafe,2,0,2018-2019
+582,Valencia,Villarreal,3,0,2018-2019
+583,Leganes,Eibar,2,2,2018-2019
+584,Sevilla,Levante,5,0,2018-2019
+585,Athletic Club,Betis,1,0,2018-2019
+586,Espanyol,Real Madrid,2,4,2018-2019
+587,Girona,Barcelona,0,2,2018-2019
+588,Valladolid,Celta Vigo,2,1,2018-2019
+589,Real Sociedad,Huesca,0,0,2018-2019
+590,Alaves,Rayo Vallecano,0,1,2018-2019
+591,Huesca,Valladolid,4,0,2018-2019
+592,Barcelona,Valencia,2,2,2018-2019
+593,Celta Vigo,Sevilla,1,0,2018-2019
+594,Real Sociedad,Athletic Club,2,1,2018-2019
+595,Levante,Getafe,0,0,2018-2019
+596,Eibar,Girona,3,0,2018-2019
+597,Real Madrid,Alaves,3,0,2018-2019
+598,Betis,Atletico de Madrid,1,0,2018-2019
+599,Villarreal,Espanyol,2,2,2018-2019
+600,Rayo Vallecano,Leganes,1,2,2018-2019
+601,Valladolid,Villarreal,0,0,2018-2019
+602,Atletico de Madrid,Real Madrid,1,3,2018-2019
+603,Espanyol,Rayo Vallecano,2,1,2018-2019
+604,Girona,Huesca,0,2,2018-2019
+605,Getafe,Celta Vigo,3,1,2018-2019
+606,Athletic Club,Barcelona,0,0,2018-2019
+607,Leganes,Betis,3,0,2018-2019
+608,Sevilla,Eibar,2,2,2018-2019
+609,Valencia,Real Sociedad,0,0,2018-2019
+610,Alaves,Levante,2,0,2018-2019
+611,Eibar,Getafe,2,2,2018-2019
+612,Barcelona,Valladolid,1,0,2018-2019
+613,Celta Vigo,Levante,1,4,2018-2019
+614,Rayo Vallecano,Atletico de Madrid,0,1,2018-2019
+615,Real Sociedad,Leganes,3,0,2018-2019
+616,Betis,Alaves,1,1,2018-2019
+617,Valencia,Espanyol,0,0,2018-2019
+618,Real Madrid,Girona,1,2,2018-2019
+619,Villarreal,Sevilla,3,0,2018-2019
+620,Huesca,Athletic Club,0,1,2018-2019
+621,Espanyol,Huesca,1,1,2018-2019
+622,Alaves,Celta Vigo,0,0,2018-2019
+623,Athletic Club,Eibar,1,0,2018-2019
+624,Getafe,Rayo Vallecano,2,1,2018-2019
+625,Sevilla,Barcelona,2,4,2018-2019
+626,Atletico de Madrid,Villarreal,2,0,2018-2019
+627,Leganes,Valencia,1,1,2018-2019
+628,Levante,Real Madrid,1,2,2018-2019
+629,Valladolid,Betis,0,2,2018-2019
+630,Girona,Real Sociedad,0,0,2018-2019
+631,Rayo Vallecano,Girona,0,2,2018-2019
+632,Espanyol,Valladolid,3,1,2018-2019
+633,Huesca,Sevilla,2,1,2018-2019
+634,Real Madrid,Barcelona,0,1,2018-2019
+635,Villarreal,Alaves,1,2,2018-2019
+636,Betis,Getafe,1,2,2018-2019
+637,Valencia,Athletic Club,2,0,2018-2019
+638,Real Sociedad,Atletico de Madrid,0,2,2018-2019
+639,Eibar,Celta Vigo,1,0,2018-2019
+640,Leganes,Levante,1,0,2018-2019
+641,Athletic Club,Espanyol,1,1,2018-2019
+642,Alaves,Eibar,1,1,2018-2019
+643,Atletico de Madrid,Leganes,1,0,2018-2019
+644,Barcelona,Rayo Vallecano,3,1,2018-2019
+645,Getafe,Huesca,2,1,2018-2019
+646,Girona,Valencia,2,3,2018-2019
+647,Levante,Villarreal,0,2,2018-2019
+648,Celta Vigo,Betis,0,1,2018-2019
+649,Valladolid,Real Madrid,1,4,2018-2019
+650,Sevilla,Real Sociedad,5,2,2018-2019
+651,Real Sociedad,Levante,1,1,2018-2019
+652,Athletic Club,Atletico de Madrid,2,0,2018-2019
+653,Huesca,Alaves,1,3,2018-2019
+654,Real Madrid,Celta Vigo,2,0,2018-2019
+655,Leganes,Girona,0,2,2018-2019
+656,Eibar,Valladolid,1,2,2018-2019
+657,Espanyol,Sevilla,0,1,2018-2019
+658,Betis,Barcelona,1,4,2018-2019
+659,Valencia,Getafe,0,0,2018-2019
+660,Villarreal,Rayo Vallecano,3,1,2018-2019
+661,Girona,Athletic Club,1,2,2018-2019
+662,Alaves,Atletico de Madrid,0,4,2018-2019
+663,Barcelona,Espanyol,2,0,2018-2019
+664,Celta Vigo,Villarreal,3,2,2018-2019
+665,Getafe,Leganes,0,2,2018-2019
+666,Sevilla,Valencia,0,1,2018-2019
+667,Rayo Vallecano,Betis,1,1,2018-2019
+668,Levante,Eibar,2,2,2018-2019
+669,Real Madrid,Huesca,3,2,2018-2019
+670,Valladolid,Real Sociedad,1,1,2018-2019
+671,Atletico de Madrid,Girona,2,0,2018-2019
+672,Espanyol,Getafe,1,1,2018-2019
+673,Villarreal,Barcelona,4,4,2018-2019
+674,Athletic Club,Levante,3,2,2018-2019
+675,Eibar,Rayo Vallecano,2,1,2018-2019
+676,Huesca,Celta Vigo,3,3,2018-2019
+677,Valencia,Real Madrid,2,1,2018-2019
+678,Leganes,Valladolid,1,0,2018-2019
+679,Sevilla,Alaves,2,0,2018-2019
+680,Real Sociedad,Betis,2,1,2018-2019
+681,Rayo Vallecano,Valencia,2,0,2018-2019
+682,Barcelona,Atletico de Madrid,2,0,2018-2019
+683,Real Madrid,Eibar,2,1,2018-2019
+684,Girona,Espanyol,1,2,2018-2019
+685,Alaves,Leganes,1,1,2018-2019
+686,Betis,Villarreal,2,1,2018-2019
+687,Celta Vigo,Real Sociedad,3,1,2018-2019
+688,Getafe,Athletic Club,1,0,2018-2019
+689,Levante,Huesca,2,2,2018-2019
+690,Valladolid,Sevilla,0,2,2018-2019
+691,Atletico de Madrid,Celta Vigo,2,0,2018-2019
+692,Espanyol,Alaves,2,1,2018-2019
+693,Huesca,Barcelona,0,0,2018-2019
+694,Sevilla,Betis,3,2,2018-2019
+695,Athletic Club,Rayo Vallecano,3,2,2018-2019
+696,Girona,Villarreal,0,1,2018-2019
+697,Real Sociedad,Eibar,1,1,2018-2019
+698,Valladolid,Getafe,2,2,2018-2019
+699,Valencia,Levante,3,1,2018-2019
+700,Leganes,Real Madrid,1,1,2018-2019
+701,Alaves,Valladolid,2,2,2018-2019
+702,Barcelona,Real Sociedad,2,1,2018-2019
+703,Celta Vigo,Girona,2,1,2018-2019
+704,Eibar,Atletico de Madrid,0,1,2018-2019
+705,Rayo Vallecano,Huesca,0,0,2018-2019
+706,Betis,Valencia,1,2,2018-2019
+707,Getafe,Sevilla,3,0,2018-2019
+708,Real Madrid,Athletic Club,3,0,2018-2019
+709,Levante,Espanyol,2,2,2018-2019
+710,Villarreal,Leganes,2,1,2018-2019
+711,Alaves,Barcelona,0,2,2018-2019
+712,Huesca,Eibar,2,0,2018-2019
+713,Valladolid,Girona,1,0,2018-2019
+714,Atletico de Madrid,Valencia,3,2,2018-2019
+715,Leganes,Athletic Club,0,1,2018-2019
+716,Levante,Betis,4,0,2018-2019
+717,Espanyol,Celta Vigo,1,1,2018-2019
+718,Getafe,Real Madrid,0,0,2018-2019
+719,Real Sociedad,Villarreal,0,1,2018-2019
+720,Sevilla,Rayo Vallecano,5,0,2018-2019
+721,Atletico de Madrid,Valladolid,1,0,2018-2019
+722,Barcelona,Levante,1,0,2018-2019
+723,Athletic Club,Alaves,1,1,2018-2019
+724,Leganes,Celta Vigo,0,0,2018-2019
+725,Girona,Sevilla,1,0,2018-2019
+726,Rayo Vallecano,Real Madrid,1,0,2018-2019
+727,Valencia,Eibar,0,1,2018-2019
+728,Real Sociedad,Getafe,2,1,2018-2019
+729,Villarreal,Huesca,1,1,2018-2019
+730,Betis,Espanyol,1,1,2018-2019
+731,Sevilla,Leganes,0,3,2018-2019
+732,Alaves,Real Sociedad,0,1,2018-2019
+733,Levante,Rayo Vallecano,4,1,2018-2019
+734,Espanyol,Atletico de Madrid,3,0,2018-2019
+735,Celta Vigo,Barcelona,2,0,2018-2019
+736,Getafe,Girona,2,0,2018-2019
+737,Huesca,Valencia,2,6,2018-2019
+738,Real Madrid,Villarreal,3,2,2018-2019
+739,Valladolid,Athletic Club,1,0,2018-2019
+740,Eibar,Betis,1,0,2018-2019
+741,Athletic Club,Celta Vigo,3,1,2018-2019
+742,Atletico de Madrid,Sevilla,1,1,2018-2019
+743,Barcelona,Getafe,2,0,2018-2019
+744,Betis,Huesca,2,1,2018-2019
+745,Girona,Levante,1,2,2018-2019
+746,Rayo Vallecano,Valladolid,1,2,2018-2019
+747,Valencia,Alaves,3,1,2018-2019
+748,Villarreal,Eibar,1,0,2018-2019
+749,Leganes,Espanyol,0,2,2018-2019
+750,Real Sociedad,Real Madrid,3,1,2018-2019
+751,Alaves,Girona,2,1,2018-2019
+752,Celta Vigo,Rayo Vallecano,2,2,2018-2019
+753,Espanyol,Real Sociedad,2,0,2018-2019
+754,Getafe,Villarreal,2,2,2018-2019
+755,Huesca,Leganes,2,1,2018-2019
+756,Sevilla,Athletic Club,2,0,2018-2019
+757,Levante,Atletico de Madrid,2,2,2018-2019
+758,Valladolid,Valencia,0,2,2018-2019
+759,Eibar,Barcelona,2,2,2018-2019
+760,Real Madrid,Betis,0,2,2018-2019
 761,Athletic Club,Barcelona,1,0,2019-2020
 762,Celta Vigo,Real Madrid,1,3,2019-2020
 763,Valencia,Real Sociedad,1,1,2019-2020

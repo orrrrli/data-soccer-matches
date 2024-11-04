@@ -2,7 +2,7 @@ import pandas as pd
 
 # Cargar tus datos
 df_partidos = pd.read_csv("DataSetPartidos.txt")
-df_estadisticas = pd.read_csv("estadisticas_creacion_goles_tiros.txt")
+df_estadisticas = pd.read_csv("estadisticas_creacion_goles.txt")
 
 # Asegurar que las temporadas tengan un formato consistente
 df_partidos['Temporada'] = df_partidos['Temporada'].str.replace("2017-18", "2017-2018")

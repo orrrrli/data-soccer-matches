@@ -15,7 +15,7 @@ Celta Vigo,13,49,2017-2018
 Alaves,14,47,2017-2018
 Levante,15,46,2017-2018
 Athletic,16,43,2017-2018
-Leganés,17,43,2017-2018
+Leganes,17,43,2017-2018
 Deportivo de La Coruna,18,29,2017-2018
 Las Palmas,19,22,2017-2018
 Malaga,20,20,2017-2018
@@ -31,7 +31,7 @@ Real Sociedad,9,50,2018-2019
 Real Betis,10,50,2018-2019
 Alaves,11,50,2018-2019
 Eibar,12,47,2018-2019
-Leganés,13,45,2018-2019
+Leganes,13,45,2018-2019
 Villarreal,14,44,2018-2019
 Levante,15,44,2018-2019
 Real Valladolid,16,41,2018-2019
@@ -56,7 +56,7 @@ Eibar,14,42,2019-2020
 Real Betis,15,41,2019-2020
 Alaves,16,39,2019-2020
 Celta Vigo,17,37,2019-2020
-Leganés,18,36,2019-2020
+Leganes,18,36,2019-2020
 RCD Mallorca,19,33,2019-2020
 Espanyol,20,25,2019-2020
 Atletico de Madrid,1,86,2020-2021
