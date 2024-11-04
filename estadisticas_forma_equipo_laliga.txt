@@ -16,9 +16,9 @@ Alaves,14,47,2017-2018
 Levante,15,46,2017-2018
 Athletic,16,43,2017-2018
 Leganés,17,43,2017-2018
-RC Deportivo,18,29,2017-2018
+Deportivo de La Coruna,18,29,2017-2018
 Las Palmas,19,22,2017-2018
-Málaga,20,20,2017-2018
+Malaga,20,20,2017-2018
 Barcelona,1,87,2018-2019
 Atletico de Madrid,2,76,2018-2019
 Real Madrid,3,68,2018-2019
