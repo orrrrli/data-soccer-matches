@@ -5,7 +5,8 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from bs4 import BeautifulSoup
 import time
-import unidecode  # Librería para quitar acentos fácilmente
+import unidecode
+import os  # Para verificar si el archivo existe
 
 # Configura el driver de Selenium
 driver = webdriver.Chrome()
@@ -89,12 +90,12 @@ def extraer_datos_por_90(driver, url, temporada):
         'passes_completed': 'Pases Completados',
         'passes_progressive_distance': 'Distancia Progresiva de Pase',
         'pass_xa': 'Asistencias Esperadas',
-        'crosses_into_penalty_area': 'Cruces al Área Penal',
+        'crosses_into_penalty_area': 'Centro al Punto Penal',
         'progressive_passes': 'Pases Progresivos',
         'Temporada': 'Temporada'
     }
 
-    filas = tabla.find("tbody").find_all("tr")
+    filas = tabla.find("tbody").find_all("tr")  # type: ignore
     estadisticas_por_90 = []
 
     for fila in filas:
@@ -116,8 +117,17 @@ def extraer_datos_por_90(driver, url, temporada):
         if len(estadisticas) > 1:
             estadisticas_por_90.append(estadisticas)
 
-    # Escribir datos en archivo de texto (agregación para múltiples temporadas)
-    with open("estadisticas_pases.txt", "a") as file:
+    # Escribir encabezados solo si el archivo está vacío o no existe
+    archivo = "estadisticas_pases.txt"
+    escribir_encabezado = not os.path.exists(archivo) or os.path.getsize(archivo) == 0
+
+    with open(archivo, "a") as file:
+        # Escribir encabezado si es necesario
+        if escribir_encabezado:
+            encabezado = ",".join(columnas_deseadas.values())
+            file.write(encabezado + "\n")
+
+        # Escribir cada fila de datos
         for estadistica in estadisticas_por_90:
             fila = [
                 estadistica.get("team", ""),

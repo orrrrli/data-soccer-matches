@@ -1,24 +1,4 @@
-Equipo,Pases Completados,Distancia Progresiva de Pase,Asistencias Esperadas,Cruces al �rea Penal,Pases Progresivos,Temporada
-Alaves,255.2,2150.5,0.58,1.63,27.5,2017-2018
-Athletic Club,347.2,2643.5,0.88,2.74,40.0,2017-2018
-Atletico Madrid,381.2,2477.4,0.81,0.89,38.4,2017-2018
-Barcelona,582.8,3193.0,1.66,0.79,56.6,2017-2018
-Betis,472.4,2753.0,0.83,1.68,39.6,2017-2018
-Celta Vigo,446.9,2861.7,0.97,2.29,42.0,2017-2018
-Eibar,334.9,2594.6,0.76,3.63,38.6,2017-2018
-Espanyol,335.6,2378.1,0.74,2.24,33.6,2017-2018
-Getafe,224.5,2019.0,0.67,1.76,28.7,2017-2018
-Girona,311.7,2385.5,0.92,2.97,32.0,2017-2018
-La Coruna,336.4,2450.7,0.92,2.24,38.9,2017-2018
-Las Palmas,416.4,2634.8,0.73,1.61,35.1,2017-2018
-Leganes,273.2,2205.0,0.71,1.97,29.2,2017-2018
-Levante,282.0,2222.0,0.59,2.29,33.8,2017-2018
-Malaga,300.6,2367.1,0.62,2.55,30.8,2017-2018
-Real Madrid,551.4,3163.2,1.55,3.21,62.7,2017-2018
-Real Sociedad,446.7,2804.8,0.94,2.71,42.2,2017-2018
-Sevilla,430.7,2813.7,0.97,1.47,48.0,2017-2018
-Valencia,376.0,2590.9,0.88,1.97,41.1,2017-2018
-Villarreal,394.6,2691.0,0.84,1.58,38.2,2017-2018
+Equipo,Pases Completados,Distancia Progresiva de Pase,Asistencias Esperadas,Centro al Punto Penal,Pases Progresivos,Temporada
 Alaves,255.2,2150.5,0.58,1.63,27.5,2017-2018
 Athletic Club,347.2,2643.5,0.88,2.74,40.0,2017-2018
 Atletico Madrid,381.2,2477.4,0.81,0.89,38.4,2017-2018
