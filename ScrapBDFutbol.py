@@ -2,7 +2,6 @@
 __author__ = 'Orlando Castaneda Sanchez'
 
 from bs4 import BeautifulSoup
-from FutbolClass import Partido
 import requests
 import re
 import unicodedata
