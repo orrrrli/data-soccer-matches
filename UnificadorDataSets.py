@@ -23,6 +23,13 @@ merged_df = merged_df.merge(
     right_on=["Equipo_local", "Temporada_local"]
 ).drop(columns=["Equipo_local", "Temporada_local"])
 
+# Reorganizar las columnas en el orden deseado
+column_order = [
+    'idPartido', 'EquipoLocal', 'EquipoVisitante', 'golesLocal', 'golesVisitante', 
+    'Temporada', 'SCA90_local', 'GCA90_local', 'SCA90_visitante', 'GCA90_visitante'
+]
+merged_df = merged_df[column_order]
+
 # Guardar el resultado en un archivo .txt separado por comas
 output_path = 'merged_match_statistics.txt'
 merged_df.to_csv(output_path, index=False, sep=",")
