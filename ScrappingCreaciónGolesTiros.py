@@ -1,94 +1,133 @@
 from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 from bs4 import BeautifulSoup
 import time
 
-# Función para extraer datos de la tabla de creación de goles y tiros de una temporada dada
-def extraer_datos_temporada_creacion(driver, url, temporada):
-    # Accedemos a la URL
+# Función para extraer solo las columnas específicas de la tabla de Creación de goles y tiros
+def extraer_datos_gca_seleccionados(driver, url, temporada):
     driver.get(url)
+    time.sleep(5)  # Espera inicial para cargar la página
     
-    # Esperamos unos segundos para que la página se cargue completamente
-    time.sleep(5)
-
-    # Obtenemos el HTML de la página actual
-    soup = BeautifulSoup(driver.page_source, 'html.parser')
-
-    # Buscamos la tabla con el ID correspondiente
-    tabla = soup.find('table', {'id': 'stats_squads_gca_for'})
-    
-    if not tabla:
-        print(f"No se encontró la tabla de creación de goles para la temporada {temporada}")
+    # Intentar cambiar a formato por 90 minutos
+    try:
+        boton_por_90 = WebDriverWait(driver, 10).until(
+            EC.element_to_be_clickable((By.ID, "stats_squads_gca_for_per_match_toggle"))
+        )
+        driver.execute_script("arguments[0].click();", boton_por_90)
+        print(f"Formato cambiado a 'por 90' para la temporada {temporada}.")
+    except Exception as e:
+        print(f"No se pudo cambiar al formato 'por 90' para la temporada {temporada}: {e}")
         return []
 
-    print(f"Tabla de creación de goles encontrada para la temporada {temporada}, comenzando a extraer datos...")
+    # Esperar a que la tabla se actualice con el formato 'por 90'
+    try:
+        WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.CSS_SELECTOR, "table#stats_squads_gca_for tbody tr"))
+        )
+    except Exception as e:
+        print(f"No se pudo localizar la tabla de estadísticas para la temporada {temporada}: {e}")
+        return []
+    
+    # Obtener el HTML actualizado
+    soup = BeautifulSoup(driver.page_source, 'html.parser')
+    tabla = soup.find('table', {'id': 'stats_squads_gca_for'})
 
-    # Estructura de los datos esperados con 'data-stat'
-    columnas_esperadas = ['team', 'sca_per90', 'gca_per90', 'Temporada']
+    if not tabla:
+        print(f"No se encontró la tabla de Creación de goles y tiros para la temporada {temporada}.")
+        return []
 
+    print(f"Tabla de Creación de goles y tiros encontrada para la temporada {temporada}, comenzando a extraer datos...")
+
+    # Definir las columnas necesarias con los encabezados especificados
+    columnas_abreviadas = {
+        'team': 'Equipo',
+        'sca': 'ACT',
+        'sca_passes_live': 'PassLive_SCA',
+        'sca_passes_dead': 'PassDead_SCA',
+        'sca_take_ons': 'HASTA_SCA',
+        'sca_shots': 'Dis_SCA',
+        'sca_fouled': 'FR_SCA',
+        'sca_defense': 'Def_SCA',
+        'gca': 'ACG',
+        'gca_passes_live': 'PassLive_GCA',
+        'gca_passes_dead': 'PassDead_GCA',
+        'gca_take_ons': 'HASTA_GCA',
+        'gca_shots': 'Dis_GCA',
+        'gca_fouled': 'FR_GCA',
+        'gca_defense': 'Def_GCA'
+    }
+
+    # Extraer todas las filas
     filas = tabla.find('tbody').find_all('tr')  # type: ignore
     estadisticas_temporada = []
 
     for fila in filas:
         estadisticas = {'Temporada': temporada}
 
-        # Extraemos el nombre del equipo en el <th> o, si no existe, en el primer <td>
-        equipo_celda = fila.find('th')
-        if equipo_celda:
-            estadisticas['team'] = equipo_celda.text.strip()
-        else:
-            estadisticas['team'] = fila.find('td').text.strip() if fila.find('td') else "N/A"
+        # Extraer solo las columnas especificadas
+        for stat, abreviacion in columnas_abreviadas.items():
+            celda = fila.find(['th', 'td'], {'data-stat': stat})
+            estadisticas[abreviacion] = celda.text.strip() if celda else "N/A"
 
-        # Extraemos el resto de los datos usando `data-stat`
-        columnas = fila.find_all('td')
-        for columna in columnas:
-            data_stat = columna.get('data-stat')
-            if data_stat in columnas_esperadas:
-                estadisticas[data_stat] = columna.text.strip()
-
-        # Añadimos solo las filas con datos
-        if len(estadisticas) > 1:
+        # Agregar solo las filas con datos completos
+        if estadisticas.get('Equipo', 'N/A') != "N/A":
             estadisticas_temporada.append(estadisticas)
 
     return estadisticas_temporada
 
 # Función para guardar los datos en un archivo .txt
-def guardar_en_txt_creacion(datos, nombre_archivo):
+def guardar_en_txt_gca(datos, nombre_archivo):
+    if not datos:
+        print("No hay datos para guardar.")
+        return
+
+    # Definir el orden de los encabezados solicitados
+    headers = [
+        'Equipo', 'ACT', 'PassLive_SCA', 'PassDead_SCA', 'HASTA_SCA', 'Dis_SCA', 'FR_SCA', 'Def_SCA',
+        'ACG', 'PassLive_GCA', 'PassDead_GCA', 'HASTA_GCA', 'Dis_GCA', 'FR_GCA', 'Def_GCA', 'Temporada'
+    ]
+
     with open(nombre_archivo, 'w', encoding='utf-8') as archivo:
-        # Escribimos los encabezados
-        archivo.write('Equipo,SCA90,GCA90,Temporada\n')
+        # Escribir encabezados
+        archivo.write(','.join(headers) + '\n')
 
+        # Escribir cada fila de datos en el orden especificado
         for estadistica in datos:
-            archivo.write(','.join([estadistica.get(col, '') for col in [
-                'team', 'sca_per90', 'gca_per90', 'Temporada'
-            ]]) + '\n')
+            fila = []
+            for header in headers:
+                # Agregar cada columna en el orden correcto
+                fila.append(estadistica.get(header, 'N/A'))
+            archivo.write(','.join(fila) + '\n')
 
-# URL base para las temporadas de creación de goles y tiros
-url_base_creacion = 'https://fbref.com/es/comps/12/{anio}-{anio_siguiente}/gca/Estadisticas-{anio}-{anio_siguiente}-La-Liga'
+# URL base para las temporadas de estadísticas de Creación de goles y tiros
+url_base_gca = 'https://fbref.com/es/comps/12/{anio}-{anio_siguiente}/gca/Estadisticas-{anio}-{anio_siguiente}-La-Liga'
 
 # Configuración de Selenium
-driver = webdriver.Chrome()  # Asegúrate de tener el controlador de Chrome configurado
+driver = webdriver.Chrome()
 driver.implicitly_wait(10)
 
-# Lista para almacenar todas las estadísticas de creación de goles y tiros
-estadisticas_creacion_totales = []
+# Lista para almacenar todas las estadísticas de Creación de goles y tiros
+estadisticas_gca_totales = []
 
 # Iteramos sobre los años de la temporada desde 2017-2018 hasta 2023-2024
 for anio in range(2017, 2024):
     anio_siguiente = anio + 1
     temporada = f"{anio}-{anio_siguiente}"
-    url_temporada = url_base_creacion.format(anio=anio, anio_siguiente=anio_siguiente)
+    url_temporada = url_base_gca.format(anio=anio, anio_siguiente=anio_siguiente)
 
-    print(f"Extrayendo datos de creación de goles de la temporada: {temporada}")
+    print(f"Extrayendo datos de Creación de goles y tiros de la temporada: {temporada}")
     
     # Extraemos los datos de la temporada actual
-    estadisticas_temporada_creacion = extraer_datos_temporada_creacion(driver, url_temporada, temporada)
+    estadisticas_temporada_gca = extraer_datos_gca_seleccionados(driver, url_temporada, temporada)
     
     # Añadimos las estadísticas de esta temporada a la lista total
-    estadisticas_creacion_totales.extend(estadisticas_temporada_creacion)
+    estadisticas_gca_totales.extend(estadisticas_temporada_gca)
 
 # Guardamos todos los datos en un solo archivo
-guardar_en_txt_creacion(estadisticas_creacion_totales, "estadisticas_creacion_goles.txt")
-print("Datos de creación de goles de todas las temporadas guardados en estadisticas_creacion_goles.txt")
+guardar_en_txt_gca(estadisticas_gca_totales, "estadisticas_gca_2017_2024.txt")
+print("Datos de Creación de goles y tiros de todas las temporadas guardados en estadisticas_gca_2017_2024.txt")
 
 # Cerramos el navegador
 driver.quit()
