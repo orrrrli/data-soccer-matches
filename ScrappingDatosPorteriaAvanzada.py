@@ -33,13 +33,9 @@ def extraer_datos_temporada_porteros(driver, url, temporada):
         equipo_celda = fila.find('th', {'data-stat': 'team'})
         estadisticas['Equipo'] = equipo_celda.text.strip() if equipo_celda else "N/A"
 
-        # Extraemos el valor de PSxG+/-
-        psxg_mas_menos = fila.find('td', {'data-stat': 'gk_psxg_net'})
-        estadisticas['PSxG+/-'] = psxg_mas_menos.text.strip() if psxg_mas_menos else "N/A"
-
-        # Extraemos el valor de % Lanzamiento
-        porcentaje_lanzamiento = fila.find('td', {'data-stat': 'gk_pct_passes_launched'})
-        estadisticas['% de Lanzamientos'] = porcentaje_lanzamiento.text.strip() if porcentaje_lanzamiento else "N/A"
+        # Extraemos el valor de PSxG-GA/90
+        psxg_ga_90 = fila.find('td', {'data-stat': 'gk_psxg_net_per90'})
+        estadisticas['PSxG-GA/90'] = psxg_ga_90.text.strip() if psxg_ga_90 else "N/A"
 
         # Añadimos solo las filas con datos
         if estadisticas['Equipo'] != "N/A":
@@ -51,13 +47,12 @@ def extraer_datos_temporada_porteros(driver, url, temporada):
 def guardar_en_txt_porteros(datos, nombre_archivo):
     with open(nombre_archivo, 'w', encoding='utf-8') as archivo:
         # Escribimos los encabezados
-        archivo.write('Equipo,PSxG+/-,% de Lanzamientos,Temporada\n')
+        archivo.write('Equipo,PSxG-GA/90,Temporada\n')
 
         for estadistica in datos:
             archivo.write(','.join([
                 estadistica.get('Equipo', ''),
-                estadistica.get('PSxG+/-', ''),
-                estadistica.get('% de Lanzamientos', ''),
+                estadistica.get('PSxG-GA/90', ''),
                 estadistica.get('Temporada', '')
             ]) + '\n')
 
