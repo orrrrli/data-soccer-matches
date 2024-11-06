@@ -1,132 +1,101 @@
 from selenium import webdriver
-from selenium.common.exceptions import NoSuchElementException, TimeoutException, StaleElementReferenceException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from bs4 import BeautifulSoup
 import time
-import unidecode
 
-# Configuración del driver de Selenium
-driver = webdriver.Chrome()
-driver.implicitly_wait(10)
+# Definir las columnas deseadas sin 'PL' ni '90 s'
+columnas_deseadas = [
+    ("team", "Equipo"),
+    ("tackles", "Derribos Tkl"), ("tackles_won", "Derribos TklG"),
+    ("tackles_def_3rd", "Derribos 3.º def."), ("tackles_mid_3rd", "Derribos 3.º cent."),
+    ("tackles_att_3rd", "Derribos 3.º ataq."),
+    ("challenge_tackles", "Desafíos Tkl"), ("challenges", "Desafíos Att"),
+    ("challenge_tackles_pct", "Desafíos Tkl%"), ("challenges_lost", "Desafíos Pérdida"),
+    ("blocks", "Bloqueos"), ("blocked_shots", "Bloqueos Dis"), ("blocked_passes", "Bloqueos Pases"),
+    ("interceptions", "Int"), ("tackles_interceptions", "Tkl+Int"),
+    ("clearances", "Desp."), ("errors", "Err")
+]
+headers = [nombre for _, nombre in columnas_deseadas] + ["Temporada"]
 
-# URL base para las temporadas defensivas
-url_base_defensiva = 'https://fbref.com/es/comps/12/{anio}-{anio_siguiente}/defense/Estadisticas-{anio}-{anio_siguiente}-La-Liga'
-
-# Diccionario de nombres de equipos para estandarizar
-nombres_equipos = {
-    "Alavés": "Alaves",
-    "Athletic Club": "Athletic Club",
-    "Atlético Madrid": "Atletico de Madrid",
-    "Barcelona": "Barcelona",
-    "Betis": "Betis",
-    "Celta Vigo": "Celta Vigo",
-    "Eibar": "Eibar",
-    "Espanyol": "Espanyol",
-    "Getafe": "Getafe",
-    "Girona": "Girona",
-    "Deportivo La Coruña": "Deportivo de La Coruna",
-    "Las Palmas": "Las Palmas",
-    "Leganés": "Leganes",
-    "Levante": "Levante",
-    "Málaga": "Malaga",
-    "Real Madrid": "Real Madrid",
-    "Real Sociedad": "Real Sociedad",
-    "Sevilla": "Sevilla",
-    "Valencia": "Valencia",
-    "Villarreal": "Villarreal"
-}
-
-# Función para extraer datos de la tabla defensiva de una temporada dada
-def extraer_datos_temporada_defensiva(driver, url, temporada):
+# Función para extraer datos específicos de Acciones defensivas
+def extraer_datos_defensivos(driver, url, temporada):
     driver.get(url)
-    time.sleep(5)
+    time.sleep(5)  # Espera inicial para cargar la página
 
-    # Intentar hacer clic en el botón "por 90" si existe
+    # Cambiar a formato 'por 90'
     try:
-        boton_por_90 = driver.find_element(By.ID, "stats_squads_defense_for_per_match_toggle")
+        boton_por_90 = WebDriverWait(driver, 10).until(
+            EC.element_to_be_clickable((By.ID, "stats_squads_defense_for_per_match_toggle"))
+        )
         driver.execute_script("arguments[0].click();", boton_por_90)
-        print("Botón 'por 90' clicado mediante JavaScript.")
-    except (NoSuchElementException, StaleElementReferenceException):
-        print(f"Botón 'por 90' no encontrado para la temporada {temporada}.")
+        print(f"Formato cambiado a 'por 90' para la temporada {temporada}.")
+    except Exception as e:
+        print(f"No se pudo cambiar al formato 'por 90' para la temporada {temporada}: {e}")
         return []
 
-    # Esperar hasta que aparezca la clase 'modified' en las celdas de estadísticas
+    # Esperar a que la tabla se actualice
     try:
         WebDriverWait(driver, 10).until(
-            EC.presence_of_element_located((By.CSS_SELECTOR, "td.modified"))
+            EC.presence_of_element_located((By.CSS_SELECTOR, "table#stats_squads_defense_for tbody tr"))
         )
-        print("La tabla se ha actualizado con estadísticas 'por 90'.")
-    except TimeoutException:
-        print("La tabla no se actualizó con estadísticas 'por 90'.")
+    except Exception as e:
+        print(f"No se pudo localizar la tabla de estadísticas para la temporada {temporada}: {e}")
         return []
 
-    # Obtener el HTML actualizado de la página
+    # Obtener el HTML actualizado
     soup = BeautifulSoup(driver.page_source, 'html.parser')
     tabla = soup.find('table', {'id': 'stats_squads_defense_for'})
 
     if not tabla:
-        print(f"No se encontró la tabla defensiva para la temporada {temporada}")
+        print(f"No se encontró la tabla de Acciones defensivas para la temporada {temporada}.")
         return []
 
-    print(f"Tabla defensiva encontrada para la temporada {temporada}, comenzando a extraer datos...")
+    print(f"Tabla de Acciones defensivas encontrada para la temporada {temporada}, comenzando a extraer datos...")
 
-    # Estructura de los datos esperados con 'data-stat'
-    columnas_esperadas = {
-        'team': 'Equipo',
-        'tackles_won': 'Derribos conseguidos',
-        'challenge_tackles_pct': '% Dribladores derribados',
-        'challenges_lost': 'Desafíos Perdidos',
-        'blocked_shots': 'Disparos Bloqueados',
-        'interceptions': 'Intercepciones',
-        'errors': 'Errores',
-        'Temporada': 'Temporada'
-    }
-
+    # Extraer datos de cada fila
     filas = tabla.find('tbody').find_all('tr') # type: ignore
     estadisticas_temporada = []
 
     for fila in filas:
-        estadisticas = {'Temporada': temporada}
-        equipo_celda = fila.find('th')
-        if equipo_celda:
-            equipo = unidecode.unidecode(equipo_celda.text.strip())
-            equipo = nombres_equipos.get(equipo, equipo)
-            estadisticas['team'] = equipo
+        estadisticas = {"Temporada": temporada}
+        
+        # Extraer cada columna de acuerdo al orden deseado
+        for data_stat, nombre_columna in columnas_deseadas:
+            celda = fila.find("td", {"data-stat": data_stat}) or fila.find("th", {"data-stat": data_stat})
+            estadisticas[nombre_columna] = celda.text.strip() if celda else "N/A"
 
-        columnas = fila.find_all('td')
-        for columna in columnas:
-            data_stat = columna.get('data-stat')
-            if data_stat in columnas_esperadas:
-                estadisticas[data_stat] = columna.text.strip()
-
-        if len(estadisticas) > 1:
+        # Verificar si hay datos del equipo en la fila
+        if estadisticas.get("Equipo", "N/A") != "N/A":
             estadisticas_temporada.append(estadisticas)
 
     return estadisticas_temporada
 
-# Función para guardar los datos en un archivo .txt
-def guardar_en_txt_defensiva(datos, nombre_archivo):
-    columnas = [
-        'Equipo', 'Derribos conseguidos', '% Dribladores derribados', 
-        'Desafíos Perdidos', 'Disparos Bloqueados', 'Intercepciones', 'Errores', 'Temporada'
-    ]
-    with open(nombre_archivo, 'w', encoding='utf-8') as archivo:
-        archivo.write(",".join(columnas) + "\n")
-        for estadistica in datos:
-            archivo.write(','.join([
-                estadistica.get('team', ''),
-                estadistica.get('tackles_won', ''),
-                estadistica.get('challenge_tackles_pct', ''),
-                estadistica.get('challenges_lost', ''),
-                estadistica.get('blocked_shots', ''),
-                estadistica.get('interceptions', ''),
-                estadistica.get('errors', ''),
-                estadistica.get('Temporada', '')
-            ]) + '\n')
+# Función para guardar datos en formato .txt
+def guardar_en_txt_defensivos(datos, nombre_archivo):
+    if not datos:
+        print("No hay datos para guardar.")
+        return
 
-# Lista para almacenar todas las estadísticas defensivas
+    # Usar encabezados especificados para asegurar el formato correcto
+    with open(nombre_archivo, 'w', encoding='utf-8') as archivo:
+        # Escribir encabezados
+        archivo.write(','.join(headers) + '\n')
+
+        # Escribir cada fila de datos en el orden especificado
+        for estadistica in datos:
+            fila = [estadistica.get(header, 'N/A') for header in headers]
+            archivo.write(','.join(fila) + '\n')
+
+# URL base para las temporadas de estadísticas de Acciones defensivas
+url_base_defensiva = 'https://fbref.com/es/comps/12/{anio}-{anio_siguiente}/defense/Estadisticas-{anio}-{anio_siguiente}-La-Liga'
+
+# Configuración de Selenium
+driver = webdriver.Chrome()
+driver.implicitly_wait(10)
+
+# Lista para almacenar todas las estadísticas de Acciones defensivas
 estadisticas_defensivas_totales = []
 
 # Iteramos sobre los años de la temporada desde 2017-2018 hasta 2023-2024
@@ -135,13 +104,17 @@ for anio in range(2017, 2024):
     temporada = f"{anio}-{anio_siguiente}"
     url_temporada = url_base_defensiva.format(anio=anio, anio_siguiente=anio_siguiente)
 
-    print(f"Extrayendo datos defensivos de la temporada: {temporada}")
-    estadisticas_temporada_defensiva = extraer_datos_temporada_defensiva(driver, url_temporada, temporada)
+    print(f"Extrayendo datos de Acciones defensivas de la temporada: {temporada}")
+    
+    # Extraemos los datos de la temporada actual
+    estadisticas_temporada_defensiva = extraer_datos_defensivos(driver, url_temporada, temporada)
+    
+    # Añadimos las estadísticas de esta temporada a la lista total
     estadisticas_defensivas_totales.extend(estadisticas_temporada_defensiva)
 
-# Guardar todos los datos en un archivo
-guardar_en_txt_defensiva(estadisticas_defensivas_totales, "estadisticas_defensivas.txt")
-print("Datos defensivos de todas las temporadas guardados en estadisticas_defensivas.txt")
+# Guardamos todos los datos en un solo archivo
+guardar_en_txt_defensivos(estadisticas_defensivas_totales, "estadisticas_defensivas_2017_2024.txt")
+print("Datos de Acciones defensivas de todas las temporadas guardados en estadisticas_defensivas_2017_2024.txt")
 
-# Cerrar el navegador
+# Cerramos el navegador
 driver.quit()
